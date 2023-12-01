@@ -5,9 +5,9 @@ import ChristmasRegards from './Areas/ChristmasRegards';
 function App() {
   return (
     <>
-      <Main />
-      <Animation />
       <ChristmasRegards />
+      <Animation />
+      <Main />
     </>
   );
 }

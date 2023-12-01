@@ -3,9 +3,8 @@ import { Box, Button, Fade } from '@mui/material';
 import FadedImageComponent from '../Components/FadedImageComponent';
 import Image from '../Components/Image';
 
-// import AnimationImage from '../assets/animation-component.png';
 import Logo from '../assets/Animation/4/LOGO.png';
-// import textoImagen from '../assets/Animation/4/texto-inferior-imagen.png';
+import textoImagen from '../assets/Animation/4/texto-inferior-imagen.png';
 import image1 from '../assets/Animation/1/imagen.png';
 import image2 from '../assets/Animation/2/imagen.png';
 import image3 from '../assets/Animation/3/imagen.png';
@@ -14,6 +13,7 @@ import mach1 from '../assets/Animation/1/mach.png';
 import alcancia2 from '../assets/Animation/2/alcancia.png';
 import mach3 from '../assets/Animation/3/mach.png';
 import alcancia4 from '../assets/Animation/4/alcancia.png';
+import { regularFadeTime } from '../const/fadeTimes';
 
 const validTheLenght = (valueDisplayed: number, ImagesArray: any[]) => {
   if (valueDisplayed >= ImagesArray.length - 1) return 0;
@@ -43,13 +43,21 @@ export default function Animation() {
     };
   }, [displayed]);
   const FadedImage = ({ displayed }: { displayed: number }) => {
-    return <>{ArrayImages[displayed]}</>;
+    return (
+      <Box sx={{ position: 'relative' }}>
+        {ArrayImages[displayed]}
+        <Box sx={{ position: 'absolute', bottom: '10px', px: '20px' }}>
+          <FadedImageComponent src={textoImagen} />
+        </Box>
+      </Box>
+    );
   };
+
   const TextImage = ({ displayed }: { displayed: number }) => {
     return (
       <>
         {ArrayTexts[displayed]}
-        <Fade in={true} timeout={800}>
+        <Fade in={true} timeout={regularFadeTime}>
           <Box pt={'18px'}>
             <Button
               variant="outlined"
@@ -63,6 +71,7 @@ export default function Animation() {
                 height: '35px',
                 minWidth: '120px',
               }}
+              href="#"
             >
               Ver más
             </Button>
@@ -71,9 +80,10 @@ export default function Animation() {
       </>
     );
   };
+
   return (
     <>
-      <Box sx={{ display: 'flex', width: '100%', height: '540px' }}>
+      <Box sx={{ display: 'flex', width: '100%', height: 'auto' }}>
         <Box sx={{ width: '55.4%' }}>
           <Box px={'44px'} pb={'80px'} pt={'28px'}>
             <Image src={Logo}></Image>
@@ -82,6 +92,7 @@ export default function Animation() {
             <TextImage displayed={displayed} />
           </Box>
         </Box>
+
         <Box
           sx={{ width: '45%' }}
           onClick={() => {
