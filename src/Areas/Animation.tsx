@@ -3,9 +3,9 @@ import { Box, Button, Fade } from '@mui/material';
 import FadedImageComponent from '../Components/FadedImageComponent';
 import Image from '../Components/Image';
 
-import AnimationImage from '../assets/animation-component.png';
+// import AnimationImage from '../assets/animation-component.png';
 import Logo from '../assets/Animation/4/LOGO.png';
-import textoImagen from '../assets/Animation/4/texto-inferior-imagen.png';
+// import textoImagen from '../assets/Animation/4/texto-inferior-imagen.png';
 import image1 from '../assets/Animation/1/imagen.png';
 import image2 from '../assets/Animation/2/imagen.png';
 import image3 from '../assets/Animation/3/imagen.png';

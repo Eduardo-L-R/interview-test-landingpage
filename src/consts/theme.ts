@@ -1,4 +1,4 @@
-import { createTheme, Button } from '@mui/material';
+import { createTheme } from '@mui/material';
 
 const { palette } = createTheme();
 const { augmentColor } = palette;
